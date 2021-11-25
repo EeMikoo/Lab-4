@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="myFunction()">   
+<center>
+    <p id="story1"> Бесконечно можно смотреть на три вещи: Как течёт вода, как горит огонь... </p>
+    <div class="img">
+        <img src="Monah1.jpg" width="300px" height="300px">
+    </div>
+        <button onclick="ChangeById()">Change Text</button> <button onclick="Image()">Change Image</button> <button onclick="Image1()">Change size</button>
+
+    <p class="story2"> Кто ты Воин? </p>
+    <button onclick="ChangeByClass()">Change Text1</button>
+
+    <h1>Hello!</h1>
+    <h2>Hello!</h2>
+    <h3>Hello!</h3>
+    <h4>Hello!</h4>
+    <h5>Hello!</h5>
+    <h6>Hello!</h6>
+
+    <button onclick="ChangeByTag()">Change Text2</button> <button onclick="ChangeColor()">ChangeColor</button>
+
+    <br>
+    <br>
+    <br>
+    
+    <form>
+        Choose which browser you prefer:
+          <select id="browsers" onchange="preferedBrowser()">
+            <option value="Chrome">Chrome</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            <option value="Firefox">Firefox</option>
+          </select>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+<center>
+    <h1 onmouseover="style.color='red'" onmouseout="style.color='black'">I'll be red</h1>
+    
+    <script>
+
+    function ChangeById(){
+        document.getElementById("story1").innerHTML="И как студенты пытаются списывать";
+    }
+    function ChangeByClass(){
+        document.getElementsByClassName("story2")[0].innerHTML="Ахиллес, Сын Пелея!";    
+    }
+    function ChangeByTag(){
+        for (i = 1 ; i<7 ; i++){
+            document.getElementsByTagName("h"+i)[0].innerHTML="Good Bye!";
+        } 
+    }
+
+
+
+    function Image(){
+          document.getElementsByTagName("img")[0].src = "Monah2.jpeg";
+        }
+    function Image1(){
+          document.getElementsByTagName("img")[0].style.width="200px";
+          document.getElementsByTagName("img")[0].style.height="200px";
+        }
+    
+    function ChangeColor() {
+        for (i = 1 ; i<7 ; i++) {
+          document.getElementsByTagName("h"+i)[0].style.color = "red";
+        }
+    }
+    
+    
+    function myFunction() {
+        alert("Page is loaded");
+    }
+
+
+    function preferedBrowser() {
+        prefer = document.forms[0].browsers.value;
+        alert("You prefer browsing internet with " + prefer);
+    }
+
+    </script>
+</body>
+</html>
